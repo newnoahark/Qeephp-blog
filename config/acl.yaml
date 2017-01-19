@@ -1,0 +1,26 @@
+# <?php die(); ?>
+
+## 注意：书写时，缩进不能使用 Tab，必须使用空格。并且各条访问规则之间不能留有空行。
+
+#############################
+# 访问规则
+#############################
+
+# 访问规则示例
+# 命名空间 admin  访问控制
+# deny 控制acl 是否起作用
+# allow 有权限的角色
+# namespace => admin
+admin:
+  all_controllers:
+    allow: super user, administrator
+    deny: ACL_NO_ROLE
+#admin::default
+  default:
+    actions:
+      all_actions:
+        allow: super user, administrator
+      index:
+        allow: super user, administrator, order manager, product manager, accounting manager, blog author
+
+
